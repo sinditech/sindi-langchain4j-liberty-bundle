@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>za.co.sindi</groupId>
+		<artifactId>sindi-langchain4j-liberty-bundle</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>${esa.artifact.id}</artifactId>
+	<packaging>esa</packaging>
+	
+	<dependencies>
+		<dependency>
+			<groupId>za.co.sindi</groupId>
+			<artifactId>${integration.artifact.id}</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.openliberty.features/microProfile-6.1 -->
+		<dependency>
+		    <groupId>io.openliberty.features</groupId>
+		    <artifactId>microProfile-6.1</artifactId>
+		    <version>24.0.0.8</version>
+		    <type>esa</type>
+		    <scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.aries</groupId>
+			        <artifactId>esa-maven-plugin</artifactId>
+			        <version>1.0.2</version>
+			        <extensions>true</extensions>
+			        <configuration>
+			        	<generateManifest>true</generateManifest>
+			        	<archiveContent>all</archiveContent>
+			        	<instructions>
+			        		<Subsystem-Vendor>IBM</Subsystem-Vendor>
+            				<IBM-Feature-Version>2</IBM-Feature-Version>
+            				<IBM-ShortName>${feature.name}</IBM-ShortName>
+            				<!--
+            				<Subsystem-Content>io.openliberty.microProfile-6.1; type="osgi.subsystem.feature"</Subsystem-Content>
+            				-->
+            				<Subsystem-SymbolicName>
+						        ${integration.artifact.id};visibility:=public
+						    </Subsystem-SymbolicName>
+            				<Subsystem-Type>osgi.subsystem.feature</Subsystem-Type>
+    						<Subsystem-Version>1.0.0</Subsystem-Version>
+    						<IBM-SPI-Package>jakarta.enterprise; type="spec",dev.langchain4j.service.sindi; type="third-party"</IBM-SPI-Package>
+			        	</instructions>
+        			</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.apache.aries</groupId>
+			   	<artifactId>esa-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
