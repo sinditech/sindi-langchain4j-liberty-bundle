@@ -1,2 +1,2 @@
-# Sindi Langchain4J
-Java Implementation of making Langchain4j Ai Service Jakarta EE CDI Compliant.
+# Sindi Langchain4J Liberty Bundle
+The OpenLiberty Bundle of [Sindi Langchain4J](https://github.com/sinditech/sindi-langchain4j).
