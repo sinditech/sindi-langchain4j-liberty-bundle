@@ -31,6 +31,7 @@
         <bom.artifact.id>sindi-langchain4j-features-bom</bom.artifact.id>
     	<esa.artifact.id>sindi-langchain4j-feature</esa.artifact.id>
     	<integration.artifact.id>sindi-langchain4j-bundle</integration.artifact.id>
+    	<new.integration.code.private.package>za.co.sindi.langchain4j.spi.liberty.cdi.internal</new.integration.code.private.package>
     </properties>
 	
 	<build>

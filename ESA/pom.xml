@@ -49,6 +49,9 @@
 						    </Subsystem-SymbolicName>
             				<Subsystem-Type>osgi.subsystem.feature</Subsystem-Type>
     						<Subsystem-Version>1.0.0</Subsystem-Version>
+    						<IBM-API-Package><!-- sindi-langchain4j-jakartaee-portable-extension;version="0.0.1-SNAPSHOT", -->
+    							sindi-langchain4j-jakartaee-core;version="0.0.1-SNAPSHOT"
+    						</IBM-API-Package>
     						<IBM-SPI-Package>jakarta.enterprise; type="spec",dev.langchain4j.service.sindi; type="third-party"</IBM-SPI-Package>
 			        	</instructions>
         			</configuration>

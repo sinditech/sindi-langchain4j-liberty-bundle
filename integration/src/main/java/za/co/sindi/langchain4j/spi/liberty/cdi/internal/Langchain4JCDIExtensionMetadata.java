@@ -15,7 +15,7 @@ import za.co.sindi.langchain4j.spi.cdi.extension.LangChain4JAiServiceExtension;
  * @author Buhake Sindi
  * @since 26 August 2024
  */
-@Component(service = CDIExtensionMetadata.class, configurationPolicy = ConfigurationPolicy.IGNORE)
+@Component(service = CDIExtensionMetadata.class, configurationPolicy = ConfigurationPolicy.IGNORE, immediate = true)
 public class Langchain4JCDIExtensionMetadata implements CDIExtensionMetadata {
 
 	/* (non-Javadoc)
