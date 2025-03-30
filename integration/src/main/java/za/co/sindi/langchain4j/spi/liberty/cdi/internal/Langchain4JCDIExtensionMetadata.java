@@ -6,9 +6,9 @@ import java.util.Set;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ConfigurationPolicy;
 
-import dev.langchain4j.service.sindi.AiService;
 import io.openliberty.cdi.spi.CDIExtensionMetadata;
 import jakarta.enterprise.inject.spi.Extension;
+import za.co.sindi.langchain4j.spi.cdi.AiService;
 import za.co.sindi.langchain4j.spi.cdi.extension.LangChain4JAiServiceExtension;
 
 /**

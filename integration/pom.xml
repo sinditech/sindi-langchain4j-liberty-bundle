@@ -37,12 +37,34 @@
 		    <version>1.1.92</version>
 		    <scope>provided</scope>
 		</dependency>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>10.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+		<!-- https://mvnrepository.com/artifact/jakarta.enterprise/jakarta.enterprise.cdi-api -->
+		<!--
+		<dependency>
+		    <groupId>jakarta.enterprise</groupId>
+		    <artifactId>jakarta.enterprise.cdi-api</artifactId>
+		    <version>4.1.0</version>
+		    <scope>provided</scope>
+		</dependency>
+		-->
+		<!--
 		<dependency>
 			<groupId>org.eclipse.microprofile</groupId>
 			<artifactId>microprofile</artifactId>
 			<version>${microprofile-api.version}</version>
 			<type>pom</type>
 			<scope>provided</scope>
+		</dependency>
+		-->
+		<dependency>
+		    <groupId>dev.langchain4j</groupId>
+		    <artifactId>langchain4j</artifactId>
+		    <version>${dev.langchain4j.version}</version>
 		</dependency>
 		<!--
 		<dependency>
@@ -60,7 +82,14 @@
 		-->
 		<dependency>
 			<groupId>za.co.sindi</groupId>
-			<artifactId>sindi-langchain4j-jakartaee-portable-extension</artifactId>
+			<artifactId>sindi-langchain4j-cdi-portable-extension</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>za.co.sindi</groupId>
+			<artifactId>sindi-commons</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
@@ -81,11 +110,13 @@
 							<Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
 							<Embed-Transitive>true</Embed-Transitive>
 							<Export-Package>
-	                            ${new.integration.code.private.package};version="1.0.0", 
+								za.co.sindi.langchain4j.spi.cdi;version="1.0.0",
+								za.co.sindi.langchain4j.spi.cdi.extension;version="1.0.0",
+	                            ${new.integration.code.private.package};version="1.0.0"
 	                        </Export-Package>
 	                        <!--
 	                        <Private-Package>
-	                            dev.langchain4j.service.sindi;version="1.0.0",
+	                            za.co.sindi.langchain4j.spi.cdi;version="1.0.0",
 	                            za.co.sindi.langchain4j.spi.cdi.extension;version="1.0.0"
 	                        </Private-Package>
 	                        -->
